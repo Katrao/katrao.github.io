@@ -129,7 +129,7 @@
               if (currentUser.email == "shrim1729@gmail.com" && currentUser.displayName == "shri (admin)") {
                 div.textContent = `${msg.timestamp} - ${msg.name || 'Anonymous'}: ${msg.text}`;
               } else {
-                div.div.textContent = `${msg.name || 'Anonymous'}: ${msg.text}`;
+                div.textContent = `${msg.name || 'Anonymous'}: ${msg.text}`;
               }
               chat.appendChild(div);
             });
