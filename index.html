@@ -126,7 +126,7 @@
               const msg = doc.data();
               const div = document.createElement('div');
               div.className = 'message';
-              if (currentUser.email != "shrim1729@gmail.com" || currentUser.displayName != "shri (admin)") {
+              if (currentUser.email == "shrim1729@gmail.com" && currentUser.displayName == "shri (admin)") {
                 div.textContent = `${msg.timestamp} - ${msg.name || 'Anonymous'}: ${msg.text}`;
               } else {
                 div.div.textContent = `${msg.name || 'Anonymous'}: ${msg.text}`;
