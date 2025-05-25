@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Oval Table - Chat</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="auth-form">
-    <input type="text" id="display-name" placeholder="Display Name" />
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Password" />
+    <input type="text" id="display-name" placeholder="Display Name"/>
+    <input type="email" id="email" placeholder="Email"/>
+    <input type="password" id="password" placeholder="Password"/>
     <button id="register-button">Register</button>
     <button id="login-button">Login</button>
   </div>
 
   <div id="name-update-form" style="display:none;">
-    <input type="text" id="new-display-name" placeholder="New Display Name" />
+    <input type="text" id="new-display-name" placeholder="New Display Name" autocomplete="off"/>
     <button type="submit" id="update-name-button">Update Display Name</button>
   </div>
 
@@ -27,7 +27,7 @@
   <div id="chat" style="display:none;"></div>
   
   <form id="message-form" style="display:none;">
-    <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
+    <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off"/>
     <button type="submit" id="send-button">→</button>
   </form>
 
