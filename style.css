@@ -13,4 +13,4 @@ p { color: #DDDDDD; }
 #logout-button { margin: 10px; align-self: flex-end; border-radius: 8px}
 #name-update-form { display: flex; flex-direction: column; padding: 10px; background: rgba(10, 14, 14, 0.95); }
 #name-update-form input { margin: 5px 0; padding: 8px; border-radius: 15px 0px 0px 15px; }
-#name-update-form button { margin: 0px 0; padding: 8px; border-radius: 0px 15px 15px 0px; width: 5.5%}
+#name-update-form button { margin: 0px 0; padding: 8px; border-radius: 0px 15px 15px 0px; width: 18.5%}
