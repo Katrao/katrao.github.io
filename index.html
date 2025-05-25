@@ -79,7 +79,6 @@
     };
 
     registerButton.onclick = () => {
-      auth.signOut();
       const email = emailInput.value;
       const password = passwordInput.value;
       const displayName = displayNameInput.value;
@@ -91,7 +90,6 @@
     };
 
     loginButton.onclick = () => {
-      auth.signOut();
       const email = emailInput.value;
       const password = passwordInput.value;
       auth.signInWithEmailAndPassword(email, password).catch(alert);
