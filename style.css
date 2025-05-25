@@ -3,8 +3,8 @@ h1 { color: #DDDDDD; }
 p { color: #DDDDDD; }
 #chat { flex: 1; overflow-y: auto; padding: 10px; border-bottom: 1px solid #ccc; background: rgba(10, 14, 14, 0.95); }
 #message-form { display: flex; background: rgba(10, 14, 14, 0.95); }
-#message-input { flex: 1; padding: 10px; border-padding: 5%; }
-#send-button { padding: 10px; border-padding: 50%; }
+#message-input { flex: 1; padding: 10px; border-radius: 5%; }
+#send-button { padding: 10px; border-radius: 50%; }
 .message { margin: 5px 0; color: white; }
 #auth-form { display: flex; flex-direction: column; padding: 10px; background: rgba(10, 14, 14, 0.95); }
 #auth-form input { margin: 5px 0; padding: 8px; }
