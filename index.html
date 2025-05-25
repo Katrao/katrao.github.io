@@ -146,12 +146,15 @@
     messageForm.addEventListener('submit', e => {
       e.preventDefault();
       const text = messageInput.value.trim();
+      const textLength = text.length;
       if (text && currentUser) {
-        db.collection('messages').add({
-          text,
-          name: currentUser.displayName || currentUser.email,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
+        if (textLength <= 500) {  
+          db.collection('messages').add({
+            text,
+            name: currentUser.displayName || currentUser.email,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          });
+        }
         messageInput.value = '';
       }
     });
