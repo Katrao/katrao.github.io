@@ -60,8 +60,6 @@
     const db = firebase.firestore();
     const auth = firebase.auth();
 
-    auth.signOut();
-
     const chat = document.getElementById('chat');
     const messageForm = document.getElementById('message-form');
     const messageInput = document.getElementById('message-input');
@@ -73,10 +71,6 @@
     const displayNameInput = document.getElementById('display-name');
 
     let currentUser = null;
-
-    window.onload = function(){
-      auth.signOut();
-    };
 
     registerButton.onclick = () => {
       const email = emailInput.value;
