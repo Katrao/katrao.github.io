@@ -122,6 +122,14 @@
             });
             chat.scrollTop = chat.scrollHeight;
           });
+       } else {
+        currentUser = null; // Clear the current user
+        document.getElementById('auth-form').style.display = 'flex'; // Show auth form
+        chat.style.display = 'none'; // Hide chat
+        messageForm.style.display = 'none'; // Hide message form
+        logoutButton.style.display = 'none'; // Hide logout button
+        nameUpdateForm.style.display = 'none'; // Hide name update form
+        chat.innerHTML = ''; // Clear chat content when logged out
       }
     });
 
