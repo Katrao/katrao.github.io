@@ -9,6 +9,7 @@ p { color: #DDDDDD; }
 #auth-form { display: flex; flex-direction: column; padding: 10px; background: rgba(10, 14, 14, 0.95); }
 #auth-form input { margin: 5px 0; padding: 8px; }
 #auth-form button { padding: 8px; }
+#logout-form { background: rgba(10, 14, 14, 0.95); }
 #logout-button { margin: 10px; align-self: flex-end; }
 #name-update-form { display: flex; flex-direction: column; padding: 10px; background: rgba(10, 14, 14, 0.95); }
 #name-update-form input, #name-update-form button { margin: 5px 0; padding: 8px; }
