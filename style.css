@@ -10,7 +10,7 @@ p { color: #DDDDDD; }
 #auth-form input { margin: 5px 0; padding: 8px; }
 #auth-form button { padding: 8px; }
 #logout-form { background: rgba(10, 14, 14, 0.95); }
-#logout-button { margin: 10px; align-self: flex-end; border-radius: 8px; width: 10%; }
+#logout-button { margin: 10px; align-self: flex-end; border-radius: 8px; width: 10%; height: 100%; }
 #name-update-form { display: flex; padding: 10px; background: rgba(10, 14, 14, 0.95); }
-#name-update-form input { margin: 5px 0; padding: 8px; border-radius: 15px 0px 0px 15px; }
-#name-update-form button { margin: 0px 0; padding: 8px; border-radius: 0px 15px 15px 0px; width: 18.5%; }
+#name-update-form input { margin: 5px 0; padding: 8px; border-radius: 15px 0px 0px 15px; height: 100%; }
+#name-update-form button { margin: 0px 0; padding: 8px; border-radius: 0px 15px 15px 0px; width: 18.5%; height: 100%; }
