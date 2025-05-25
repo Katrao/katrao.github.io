@@ -17,6 +17,7 @@
     #auth-form { display: flex; flex-direction: column; padding: 10px; }
     #auth-form input { margin: 5px 0; padding: 8px; }
     #auth-form button { padding: 8px; }
+    #logout-button { margin: 10px; align-self: flex-end; }
   </style>
 </head>
 <body>
@@ -28,6 +29,7 @@
     <button id="login-button">Login</button>
   </div>
 
+  <button id="logout-button" style="display:none;">Logout</button>
   <div id="chat" style="display:none;"></div>
   <form id="message-form" style="display:none;">
     <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
@@ -81,6 +83,10 @@
       const email = emailInput.value;
       const password = passwordInput.value;
       auth.signInWithEmailAndPassword(email, password).catch(alert);
+    };
+
+    logoutButton.onclick = () => {
+      auth.signOut();
     };
 
     auth.onAuthStateChanged(user => {
