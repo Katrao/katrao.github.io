@@ -29,6 +29,11 @@
     <button id="login-button">Login</button>
   </div>
 
+  <div id="name-update-form" style="display:none;">
+    <input type="text" id="new-display-name" placeholder="New Display Name" />
+    <button id="update-name-button">Update Display Name</button>
+  </div>
+
   <button id="logout-button" style="display:none;">Logout</button>
   <div id="chat" style="display:none;"></div>
   <form id="message-form" style="display:none;">
@@ -87,6 +92,15 @@
 
     logoutButton.onclick = () => {
       auth.signOut();
+    };
+
+    updateNameButton.onclick = () => {
+      const newName = newDisplayNameInput.value;
+      if (currentUser && newName) {
+        currentUser.updateProfile({ displayName: newName })
+          .then(() => alert("Display name updated!"))
+          .catch(alert);
+      }
     };
 
     auth.onAuthStateChanged(user => {
