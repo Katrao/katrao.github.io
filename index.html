@@ -17,6 +17,8 @@
     #auth-form input { margin: 5px 0; padding: 8px; }
     #auth-form button { padding: 8px; }
     #logout-button { margin: 10px; align-self: flex-end; }
+    #name-update-form { display: flex; flex-direction: column; padding: 10px; } /* Added style for name update form */
+    #name-update-form input, #name-update-form button { margin: 5px 0; padding: 8px; }
   </style>
 </head>
 <body>
@@ -34,13 +36,12 @@
   </div>
 
   <button id="logout-button" style="display:none;">Logout</button>
-  <div id="chat"></div>
-  <form id="message-form">
+  <div id="chat" style="display:none;"></div>
+  <form id="message-form" style="display:none;">
     <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
     <button type="submit" id="send-button">Send</button>
   </form>
 
-  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
@@ -65,9 +66,12 @@
     const messageInput = document.getElementById('message-input');
     const registerButton = document.getElementById('register-button');
     const loginButton = document.getElementById('login-button');
-    const nameUpdateForm = document.getElementById('name-update-form');
-    const newDisplayNameInput = document.getElementById('new-display-name');
-    const updateNameButton = document.getElementById('update-name-button');
+    const logoutButton = document.getElementById('logout-button'); // Get the logout button
+    const authForm = document.getElementById('auth-form'); // Get the auth form div
+
+    const nameUpdateForm = document.getElementById('name-update-form'); // Get name update form
+    const newDisplayNameInput = document.getElementById('new-display-name'); // Get new display name input
+    const updateNameButton = document.getElementById('update-name-button'); // Get update name button
 
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
@@ -108,9 +112,11 @@
     auth.onAuthStateChanged(user => {
       if (user) {
         currentUser = user;
-        document.getElementById('auth-form').style.display = 'none';
-        chat.style.display = 'block';
-        messageForm.style.display = 'flex';
+        authForm.style.display = 'none'; // Hide auth form
+        chat.style.display = 'block'; // Show chat
+        messageForm.style.display = 'flex'; // Show message form
+        logoutButton.style.display = 'block'; // Show logout button
+        nameUpdateForm.style.display = 'flex'; // Show name update form
 
         db.collection('messages')
           .orderBy('timestamp')
@@ -125,9 +131,10 @@
             });
             chat.scrollTop = chat.scrollHeight;
           });
-       } else {
-        currentUser = null; // Clear the current user
-        document.getElementById('auth-form').style.display = 'flex'; // Show auth form
+      } else {
+        // User is not logged in or has logged out
+        currentUser = null;
+        authForm.style.display = 'flex'; // Show auth form
         chat.style.display = 'none'; // Hide chat
         messageForm.style.display = 'none'; // Hide message form
         logoutButton.style.display = 'none'; // Hide logout button
