@@ -80,7 +80,7 @@ auth.onAuthStateChanged(user => {
           if (currentUser.email == "otchattest123@gmail.com") {
             div.textContent = `${msg.timestamp} - ${msg.name || 'Anonymous'}: ${msg.text}`;
           } else {
-            div.textContent = `${msg.name || 'Anonymous'}: ${msg.text}`;
+            div.textContent = `${msg.name || 'Anonymous'} (${msg.email}): ${msg.text}`;
           }
           chat.appendChild(div);
         });
@@ -106,7 +106,8 @@ messageForm.addEventListener('submit', e => {
     if (textLength <= 500) {  
       db.collection('messages').add({
         text,
-        name: currentUser.email,
+        name: currentUser.displayName || currentUser.email,
+        email: currentUser.email,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       });
     }
